@@ -59,4 +59,8 @@ public class LoginScreen extends AppCompatActivity {
         startActivity(registerNow);
     }
 
+    //method for user authentication and login
+
+
+
 }
