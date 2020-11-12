@@ -8,7 +8,7 @@
     android:background="@drawable/login_bg"
     android:backgroundTintMode="src_over"
     android:backgroundTint="#40000000"
-    tools:context=".LoginScreen">
+    tools:context=".screens.LoginScreen">
 
     <EditText
         android:id="@+id/editTextUsername"

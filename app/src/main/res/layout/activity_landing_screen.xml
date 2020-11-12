@@ -8,7 +8,7 @@
     android:background="@drawable/landing_bg"
     android:backgroundTintMode="src_over"
     android:backgroundTint="#90000000"
-    tools:context=".LandingScreen">
+    tools:context=".screens.LandingScreen">
 
     <ImageView
         android:id="@+id/ivIcon"
