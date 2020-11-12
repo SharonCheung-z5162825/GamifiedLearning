@@ -1,23 +1,22 @@
-package au.edu.unsw.infs3634.gamifiedlearning;
+package au.edu.unsw.infs3634.gamifiedlearning.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class LandingActivity extends AppCompatActivity {
+import au.edu.unsw.infs3634.gamifiedlearning.R;
+
+public class LandingScreen extends AppCompatActivity {
     private ImageView ivIcon;
     private Button bLogin, bRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_landing);
+        setContentView(R.layout.activity_landing_screen);
 
         ivIcon = findViewById(R.id.ivIcon);
         bLogin = findViewById(R.id.bLogin);

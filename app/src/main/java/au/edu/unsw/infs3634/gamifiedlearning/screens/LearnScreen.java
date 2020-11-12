@@ -1,8 +1,10 @@
-package au.edu.unsw.infs3634.gamifiedlearning;
+package au.edu.unsw.infs3634.gamifiedlearning.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import au.edu.unsw.infs3634.gamifiedlearning.R;
 
 public class LearnScreen extends AppCompatActivity {
 
