@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="au.edu.unsw.infs3634.gamifiedlearning">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".screens.Quiz"></activity>
+        <activity android:name=".screens.Quiz" />
         <activity android:name=".screens.LandingScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +23,8 @@
         <activity android:name=".screens.RegisterScreen" />
         <activity android:name=".screens.LearnScreen" />
         <activity android:name=".screens.LoginScreen" />
+        <activity android:name=".screens.Nature" />
+        <activity android:name=".screens.Meditation" />
     </application>
 
 </manifest>
