@@ -9,12 +9,15 @@ import androidx.room.RoomDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import au.edu.unsw.infs3634.gamifiedlearning.DAOs.QuizDao;
 import au.edu.unsw.infs3634.gamifiedlearning.DAOs.UserDao;
+import au.edu.unsw.infs3634.gamifiedlearning.models.Quiz;
 import au.edu.unsw.infs3634.gamifiedlearning.models.User;
 
-@Database(entities = {User.class}, version = 1, exportSchema = false)
+@Database(entities = {User.class, Quiz.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract UserDao userDao();
+    public abstract QuizDao quizDao();
 
     private static volatile AppDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
