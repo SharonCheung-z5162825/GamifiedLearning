@@ -14,7 +14,7 @@ import au.edu.unsw.infs3634.gamifiedlearning.DAOs.UserDao;
 import au.edu.unsw.infs3634.gamifiedlearning.models.Quiz;
 import au.edu.unsw.infs3634.gamifiedlearning.models.User;
 
-@Database(entities = {User.class, Quiz.class}, version = 1, exportSchema = false)
+@Database(entities = {User.class, Quiz.class}, version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract UserDao userDao();
     public abstract QuizDao quizDao();
@@ -30,6 +30,7 @@ public abstract class AppDatabase extends RoomDatabase {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             AppDatabase.class, "app_database.db")
+                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }
