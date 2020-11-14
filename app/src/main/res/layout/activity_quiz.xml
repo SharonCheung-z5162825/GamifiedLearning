@@ -4,8 +4,105 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.Quiz">
+    tools:context=".screens.QuizScreen">
 
 
+    <TextView
+        android:id="@+id/tvQuizScore"
+        android:layout_width="71dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/quiz_score"
+        android:textColor="#505050"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvQuizQuestionCount"
+        android:layout_width="125dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/quiz_question"
+        android:textColor="#505050"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvQuizScore"
+        app:layout_constraintTop_toBottomOf="@+id/tvQuizScore" />
+
+    <RadioGroup
+        android:id="@+id/RgQuizRadioQuestionRadioGroup"
+        android:layout_width="330dp"
+        android:layout_height="130dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.661">
+
+        <RadioButton
+            android:id="@+id/rBQuizOption1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/greyquizoption"
+            android:text="@string/quiz_mc_options" />
+
+        <RadioButton
+            android:id="@+id/rBQuizOption2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/greyquizoption"
+            android:text="@string/quiz_mc_options" />
+
+        <RadioButton
+            android:id="@+id/rBQuizOption3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/greyquizoption"
+            android:text="@string/quiz_mc_options" />
+
+        <RadioButton
+            android:id="@+id/rBQuizOption4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/greyquizoption"
+            android:text="@string/quiz_mc_options" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvQuizQuestions"
+        android:layout_width="366dp"
+        android:layout_height="182dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/quiz_mc_questions"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvQuizQuestionCount"
+        app:layout_constraintTop_toBottomOf="@+id/tvQuizQuestionCount" />
+
+    <Button
+        android:id="@+id/btnQuizConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Next Question"
+        app:layout_constraintEnd_toEndOf="@+id/RgQuizRadioQuestionRadioGroup"
+        app:layout_constraintStart_toStartOf="@+id/RgQuizRadioQuestionRadioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/RgQuizRadioQuestionRadioGroup" />
+
+    <TextView
+        android:id="@+id/tvQuizCountdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/quiz_countdown"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvQuizScore" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

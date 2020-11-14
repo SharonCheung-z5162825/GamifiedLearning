@@ -35,6 +35,7 @@ public class LandingScreen extends AppCompatActivity {
                 launchRegisterActivity();
             }
         });
+
     }
 
     private void launchLoginActivity() {

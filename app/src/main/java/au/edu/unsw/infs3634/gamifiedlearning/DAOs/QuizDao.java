@@ -19,10 +19,7 @@ public interface QuizDao {
     @Query("SELECT COUNT(*) FROM QUIZ")
     long getCountOfQuestions();
 
-    //Get question based on category -- should we have categories
-    /*
+    //Get question based on category
     @Query("SELECT * FROM QUIZ WHERE mCategory = :mCategory")
     List<Quiz> getAllQuestionsByCategory(String mCategory);
-
-     */
 }

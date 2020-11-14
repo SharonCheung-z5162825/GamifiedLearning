@@ -2,4 +2,13 @@
     <string name="app_name">Zen</string>
     <string name="b_register">Register</string>
     <string name="b_login">Login</string>
+
+    <string name="quiz_score">Score: 0</string>
+    <string name="quiz_question">Question: 1/Total</string>
+    <string name="quiz_countdown">00:30</string>
+    <string name="quiz_mc_questions">"Actual questions\n Actual question"</string>
+    <string name="quiz_mc_options">Option abcd</string>
+
+
+
 </resources>
