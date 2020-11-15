@@ -1,7 +1,6 @@
 package au.edu.unsw.infs3634.gamifiedlearning.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -12,8 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.List;
 
 import au.edu.unsw.infs3634.gamifiedlearning.AppDatabase;
 import au.edu.unsw.infs3634.gamifiedlearning.R;
@@ -62,7 +59,7 @@ public class LoginScreen extends AppCompatActivity {
     }
     public void learnScreenLaunch(){
         //Intent to change screen
-        Intent loginBtn = new Intent(LoginScreen.this, LearnScreen.class);
+        Intent loginBtn = new Intent(LoginScreen.this, HomeScreen.class);
         startActivity(loginBtn);
     }
     public void registerScreenLaunch(){
