@@ -14,6 +14,7 @@ import android.widget.SearchView;
 
 import au.edu.unsw.infs3634.gamifiedlearning.R;
 import au.edu.unsw.infs3634.gamifiedlearning.adapters.LearningModuleAdapter;
+import au.edu.unsw.infs3634.gamifiedlearning.models.Quiz;
 
 public class ModuleScreen extends AppCompatActivity {
 
@@ -39,7 +40,7 @@ public class ModuleScreen extends AppCompatActivity {
                 launchQuizScreen(moduleNum);
             }
         };
-        mAdapter = new LearningModuleAdapter(QuizRecyclerViewClass.getModules(), listener);
+        mAdapter = new LearningModuleAdapter(Quiz.getModules(), listener);
         mRecyclerView.setAdapter(mAdapter);
     }
 

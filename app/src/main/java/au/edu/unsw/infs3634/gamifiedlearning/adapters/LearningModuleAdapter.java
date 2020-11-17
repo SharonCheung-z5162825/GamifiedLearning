@@ -15,14 +15,14 @@ import java.util.Collections;
 import java.util.Comparator;
 
 import au.edu.unsw.infs3634.gamifiedlearning.R;
-import au.edu.unsw.infs3634.gamifiedlearning.screens.QuizRecyclerViewClass;
+import au.edu.unsw.infs3634.gamifiedlearning.models.Quiz;
 
 public class LearningModuleAdapter extends RecyclerView.Adapter<LearningModuleAdapter.LearningModuleViewHolder> implements Filterable {
-    private ArrayList<QuizRecyclerViewClass> mQuiz;
+    private ArrayList<Quiz> mQuiz;
     private Listener mListener;
-    private ArrayList<QuizRecyclerViewClass> mQuizFiltered;
+    private ArrayList<Quiz> mQuizFiltered;
 
-    public LearningModuleAdapter(ArrayList<QuizRecyclerViewClass> quizzes, Listener listener){
+    public LearningModuleAdapter(ArrayList<Quiz> quizzes, Listener listener){
         this.mQuiz = quizzes;
         this.mListener = listener;
         this.mQuizFiltered = quizzes;
@@ -38,8 +38,8 @@ public class LearningModuleAdapter extends RecyclerView.Adapter<LearningModuleAd
                 if(charString.isEmpty()){
                     mQuizFiltered = mQuiz;
                 } else {
-                  ArrayList<QuizRecyclerViewClass> filteredList = new ArrayList<>();
-                  for(QuizRecyclerViewClass quiz : mQuiz){
+                  ArrayList<Quiz> filteredList = new ArrayList<>();
+                  for(Quiz quiz : mQuiz){
                       if(quiz.getModule().toLowerCase().contains(charString.toLowerCase())){
                           filteredList.add(quiz);
                       }
@@ -53,7 +53,7 @@ public class LearningModuleAdapter extends RecyclerView.Adapter<LearningModuleAd
 
             @Override
             protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-                mQuizFiltered = (ArrayList<QuizRecyclerViewClass>) filterResults.values;
+                mQuizFiltered = (ArrayList<Quiz>) filterResults.values;
                 //notify the adapter that the changes have been made to the data
                 notifyDataSetChanged();
             }
@@ -74,7 +74,7 @@ public class LearningModuleAdapter extends RecyclerView.Adapter<LearningModuleAd
 
     @Override
     public void onBindViewHolder(@NonNull LearningModuleAdapter.LearningModuleViewHolder holder, int position) {
-        QuizRecyclerViewClass modulePresent = mQuizFiltered.get(position);
+        Quiz modulePresent = mQuizFiltered.get(position);
         holder.name.setText(modulePresent.getModule());
         holder.question.setText("10 Questions");
         holder.itemView.setTag(modulePresent.getModuleCode() + " " + modulePresent.getModule());
@@ -108,9 +108,9 @@ public class LearningModuleAdapter extends RecyclerView.Adapter<LearningModuleAd
     //sort method to sort items in recyclerview list
     public void sort(final int sortMethod){
         if(mQuizFiltered.size() > 0){
-            Collections.sort(mQuizFiltered, new Comparator<QuizRecyclerViewClass>() {
+            Collections.sort(mQuizFiltered, new Comparator<Quiz>() {
                 @Override
-                public int compare(QuizRecyclerViewClass o1, QuizRecyclerViewClass o2) {
+                public int compare(Quiz o1, Quiz o2) {
                    if (sortMethod == 1) {
                         //sort by alphabetic A-Z
                         return o1.getModule().compareTo(o2.getModule());

@@ -84,15 +84,19 @@ public class QuizScreen extends AppCompatActivity implements AsyncTaskQuiz{
         //Get the module/category selected by the user
         Intent intent = getIntent();
         final String moduleName = intent.getStringExtra(QuizScreenAndDatabase.INTENT_MESSAGE);
-        //final QuizRecyclerViewClass quizRecyclerViewClass = QuizRecyclerViewClass.getModule(moduleName);
-        System.out.println(moduleName + " From get intent QuizScreen!");
+        final Quiz quiz = Quiz.getModule(moduleName);
+        System.out.println(moduleName);
+
+        //manipulate the string and get a substring of the intent message parsed through
+        String manipulate = moduleName.substring(2);
+        System.out.println(manipulate);
 
         //Return the list of questions by module/category
         AppDatabase db = AppDatabase.getDatabase(QuizScreen.this);
         GetQuestionsByCategoryAsyncTask getQuestionsByCategoryAsyncTask = new GetQuestionsByCategoryAsyncTask();
         getQuestionsByCategoryAsyncTask.setDatabase(db);
         getQuestionsByCategoryAsyncTask.setQuiz(QuizScreen.this);
-       // getQuestionsByCategoryAsyncTask.execute(moduleName);
+        getQuestionsByCategoryAsyncTask.execute(manipulate);
 
 
         //Confirm button onClickListener
@@ -188,7 +192,7 @@ public class QuizScreen extends AppCompatActivity implements AsyncTaskQuiz{
         String timeStamp = String.format(Locale.getDefault(),"%02d:%02d", mins, secs);
         mCountdown.setText(timeStamp);
 
-        if(countdownTimeLeftMillis < 5000){
+        if(countdownTimeLeftMillis < 10000){
             mCountdown.setTextColor(Color.RED);
         }else{
             mCountdown.setTextColor(countDownColour);

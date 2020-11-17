@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,7 @@ public class QuizScreenAndDatabase extends AppCompatActivity implements AsyncTas
     private Button mStartButton;
     private String moduleSelected = " ";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,15 +38,18 @@ public class QuizScreenAndDatabase extends AppCompatActivity implements AsyncTas
 
         Intent intent = getIntent();
         final String moduleName = intent.getStringExtra(INTENT_MESSAGE);
-        final QuizRecyclerViewClass quizRecyclerViewClass = QuizRecyclerViewClass.getModule(moduleName);
-        System.out.println(moduleName + " From get intent QuizScreenAndDatabase");
+        final Quiz quiz = Quiz.getModule(moduleName);
+        System.out.println(moduleName);
+        //manipulate the string and get a substring of the intent message parsed through
+        String manipulate = moduleName.substring(2);
+        //System.out.println(manipulate);
 
         //instantiate objects
         mStartButton = findViewById(R.id.btnStartQuiz);
         mModuleSelected = findViewById(R.id.tvModuleSelected);
 
         //set values
-        mModuleSelected.setText(quizRecyclerViewClass.getModule());
+        mModuleSelected.setText(manipulate);
 
         AppDatabase db = AppDatabase.getDatabase(QuizScreenAndDatabase.this);
         //Populate database with questions if it does not already exist
@@ -58,10 +63,17 @@ public class QuizScreenAndDatabase extends AppCompatActivity implements AsyncTas
             @Override
             public void onClick(View view) {
                 //listener from adapter to listen for which module the user selects on
-                runQuizScreen(moduleName);
-
-
+               runQuizScreen(moduleName);
                 //write that code --> need an adapter listener to listen for which module/category is selected
+
+//                if (!moduleSelected.equals(" ")){
+//                    runQuizScreen(moduleName);
+//                    Toast.makeText(QuizScreenAndDatabase.this, "Success!", Toast.LENGTH_SHORT).show();
+//
+//                } else{
+//                    Toast.makeText(QuizScreenAndDatabase.this, "This didn't work", Toast.LENGTH_SHORT).show();
+//
+//                }
             }
         });
     }
