@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=C1:9E:6A:4A:F2:C5:6F:3C:CC:B2:82:AC:7A:B1:00:77:57:98:C1:CC%3Bau.edu.unsw.infs3634.tourismguide
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    au.edu.unsw.infs3634.gamifiedlearning
+
+    SHA-1 certificate fingerprint:
+    C1:9E:6A:4A:F2:C5:6F:3C:CC:B2:82:AC:7A:B1:00:77:57:98:C1:CC
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCZH038jHHgWH3Q8vvuKC6YsPagNYiM7-o</string>
+</resources>
