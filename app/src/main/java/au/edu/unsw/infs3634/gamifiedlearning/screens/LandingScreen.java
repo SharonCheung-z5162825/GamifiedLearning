@@ -19,6 +19,7 @@ public class LandingScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing_screen);
 
+
         ivIcon = findViewById(R.id.ivIcon);
         bLogin = findViewById(R.id.bLogin);
         bRegister = findViewById(R.id.bRegister);

@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -17,7 +19,7 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".screens.Help"></activity>
         <activity android:name=".screens.ProgressBar" />
-        <activity android:name=".screens.Exercise" />
+        <activity android:name=".screens.Exercise"/>
         <activity android:name=".screens.LearnScreen" />
         <activity android:name=".screens.QuizScreen" />
         <activity android:name=".screens.HomeScreen">
@@ -27,6 +29,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
         <activity android:name=".screens.RegisterScreen" />
         <activity android:name=".screens.LandingScreen" />
         <activity android:name=".screens.LoginScreen" />

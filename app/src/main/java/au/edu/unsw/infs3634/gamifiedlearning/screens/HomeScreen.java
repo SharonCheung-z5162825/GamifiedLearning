@@ -24,6 +24,7 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
+
         //set on-click listener on cardview learning modules
         card_learn = findViewById(R.id.card_learn);
         card_learn.setOnClickListener(new View.OnClickListener() {
