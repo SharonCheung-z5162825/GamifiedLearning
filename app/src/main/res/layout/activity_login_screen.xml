@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scaleType="centerCrop"
-    android:background="@drawable/login_bg"
-    android:backgroundTintMode="src_over"
+    android:background="#4C4B4B"
     android:backgroundTint="#40000000"
+    android:backgroundTintMode="src_over"
+    android:scaleType="centerCrop"
     tools:context=".screens.LoginScreen">
 
     <EditText
@@ -15,13 +15,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_transparent"
-        android:textColorHint="@android:color/background_light"
-        android:textColor="@android:color/background_light"
         android:ems="10"
         android:gravity="center"
         android:hint="Username"
         android:inputType="textPersonName"
         android:padding="10dp"
+        android:textColor="@android:color/background_light"
+        android:textColorHint="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,13 +33,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/rounded_transparent"
-        android:padding = "10dp"
-        android:gravity="center"
         android:ems="10"
+        android:gravity="center"
         android:hint="Password"
-        android:textColorHint="@android:color/background_light"
-        android:textColor="@android:color/background_light"
         android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColor="@android:color/background_light"
+        android:textColorHint="@android:color/background_light"
         app:layout_constraintStart_toStartOf="@+id/editTextUsername"
         app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
 
@@ -52,11 +52,11 @@
         android:gravity="center"
         android:padding="16dp"
         android:text="LogIn"
+        android:textColor="@android:color/background_light"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
         app:layout_constraintStart_toStartOf="@+id/editTextPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
-        android:textColor="@android:color/background_light" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
     <TextView
         android:id="@+id/tvDontHaveAccount"
