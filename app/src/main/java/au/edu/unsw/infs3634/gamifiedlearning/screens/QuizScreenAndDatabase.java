@@ -1,10 +1,12 @@
 package au.edu.unsw.infs3634.gamifiedlearning.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Ignore;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -20,19 +22,29 @@ import au.edu.unsw.infs3634.gamifiedlearning.R;
 import au.edu.unsw.infs3634.gamifiedlearning.models.Quiz;
 import au.edu.unsw.infs3634.gamifiedlearning.models.User;
 
-public class QuizScreenAndDatabase extends AppCompatActivity implements AsyncTaskUser, AsyncTaskQuiz {
+public class QuizScreenAndDatabase extends AppCompatActivity implements AsyncTaskUser, AsyncTaskQuiz, AdapterView.OnItemSelectedListener {
 
+    public static final String INTENT_MESSAGE = "Text";
     private TextView mModuleSelected;
     private Button mStartButton;
+    private String moduleSelected = " ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_screen_and_database);
 
+        Intent intent = getIntent();
+        final String moduleName = intent.getStringExtra(INTENT_MESSAGE);
+        final QuizRecyclerViewClass quizRecyclerViewClass = QuizRecyclerViewClass.getModule(moduleName);
+        System.out.println(moduleName + " From get intent QuizScreenAndDatabase");
+
         //instantiate objects
         mStartButton = findViewById(R.id.btnStartQuiz);
         mModuleSelected = findViewById(R.id.tvModuleSelected);
+
+        //set values
+        mModuleSelected.setText(quizRecyclerViewClass.getModule());
 
         AppDatabase db = AppDatabase.getDatabase(QuizScreenAndDatabase.this);
         //Populate database with questions if it does not already exist
@@ -46,6 +58,7 @@ public class QuizScreenAndDatabase extends AppCompatActivity implements AsyncTas
             @Override
             public void onClick(View view) {
                 //listener from adapter to listen for which module the user selects on
+                runQuizScreen(moduleName);
 
 
                 //write that code --> need an adapter listener to listen for which module/category is selected
@@ -127,10 +140,12 @@ public class QuizScreenAndDatabase extends AppCompatActivity implements AsyncTas
         Quiz[] quizArray = quizQuestions.toArray(new Quiz[quizQuestions.size()]);
         insertQuestionsAsyncTask.execute(quizArray);
     }
-    public void runQuizScreen(){
+    public void runQuizScreen(String message){
         //run intent to change screens
-        Intent runQuizScreen = new Intent(QuizScreenAndDatabase.this, QuizScreen.class);
-        startActivity(runQuizScreen);
+        Intent quizScreen = new Intent(QuizScreenAndDatabase.this, QuizScreen.class);
+        quizScreen.putExtra(QuizScreenAndDatabase.INTENT_MESSAGE, message);
+        System.out.println(message + " From QuizScreenAndDatabase");
+        startActivity(quizScreen);
     }
 
     @Override
@@ -182,6 +197,16 @@ public class QuizScreenAndDatabase extends AppCompatActivity implements AsyncTas
 
     @Override
     public void handleInsertPoints(String result) {
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        moduleSelected = parent.getItemAtPosition(position).toString();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
 }

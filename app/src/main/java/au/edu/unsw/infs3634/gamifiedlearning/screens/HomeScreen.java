@@ -3,6 +3,8 @@ package au.edu.unsw.infs3634.gamifiedlearning.screens;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +14,9 @@ import android.view.View;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import au.edu.unsw.infs3634.gamifiedlearning.R;
+import au.edu.unsw.infs3634.gamifiedlearning.adapters.LearningModuleAdapter;
+import au.edu.unsw.infs3634.gamifiedlearning.models.Module;
+import au.edu.unsw.infs3634.gamifiedlearning.models.Quiz;
 
 public class HomeScreen extends AppCompatActivity {
 
@@ -37,7 +42,7 @@ public class HomeScreen extends AppCompatActivity {
         card_quiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeScreen.this, QuizScreenAndDatabase.class));
+                startActivity(new Intent(HomeScreen.this, ModuleScreen.class));
             }
         });
         //set on-click listener on cardview meditation

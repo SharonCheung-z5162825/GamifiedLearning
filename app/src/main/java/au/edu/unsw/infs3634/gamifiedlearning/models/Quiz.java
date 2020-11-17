@@ -2,7 +2,10 @@ package au.edu.unsw.infs3634.gamifiedlearning.models;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+
+import java.util.ArrayList;
 
 @Entity
 public class Quiz {
@@ -30,7 +33,16 @@ public class Quiz {
         this.mCategory = mCategory;
     }
 
-    //setters
+//    private String mModuleName;
+//    private String mId;
+
+//    @Ignore
+//    public Quiz(String mModuleName, String mId){
+//        this.mModuleName = mModuleName;
+//        this.mId = mId;
+//    }
+
+    //getters
     public String getQuestion(){
         return mQuestion;
     }
@@ -52,8 +64,14 @@ public class Quiz {
     public String getCategory() {
         return mCategory;
     }
+//    public String getModuleName(){
+//        return mModuleName;
+//    }
+//    public String getId(){
+//        return mId;
+//    }
 
-    //getters
+    //setters
     public void setQuestion(String mQuestion){
         this.mQuestion = mQuestion;
     }
@@ -75,5 +93,32 @@ public class Quiz {
     public void setCategory(String mCategory){
         this.mCategory = mCategory;
     }
+//    public void setModuleName(String mModuleName){
+//        this.mModuleName = mModuleName;
+//    }
+//    public void setId(String mId){
+//        this.mId = mId;
+//    }
+    //ArrayList containing Modules
+    //Their respective images
+//    public static ArrayList<Quiz> getModules() {
+//        ArrayList<Quiz> modules = new ArrayList<>();
+//        modules.add(new Quiz("Depression","1"));
+//        modules.add(new Quiz("Anxiety","2"));
+//        modules.add(new Quiz("Addiction","3"));
+//        modules.add(new Quiz("Eating Disorder","4"));
+//        modules.add(new Quiz("Sleep Issues","5"));
+//        return modules;
+//    }
+//    public static Quiz getModules(String mId){
+//        ArrayList<Quiz> mod = Quiz.getModules();
+//        for(final Quiz quiz : mod){
+//            if(quiz.getId().equals(mId)){
+//                return quiz;
+//            }
+//        }
+//        return mod.get(mod.size() - 1);
+//    }
+
 }
 

@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -25,6 +26,7 @@ import au.edu.unsw.infs3634.gamifiedlearning.R;
 import au.edu.unsw.infs3634.gamifiedlearning.models.Quiz;
 
 public class QuizScreen extends AppCompatActivity implements AsyncTaskQuiz{
+    public static final String INTENT_MESSAGE = "Empty";
 
     private TextView mQuestion;
     private TextView mScore;
@@ -80,16 +82,17 @@ public class QuizScreen extends AppCompatActivity implements AsyncTaskQuiz{
         countDownColour = mCountdown.getTextColors();
 
         //Get the module/category selected by the user
-        Intent explicitIntent = getIntent();
-        String category = explicitIntent.getStringExtra("category");
-        System.out.println(category);
+        Intent intent = getIntent();
+        final String moduleName = intent.getStringExtra(QuizScreenAndDatabase.INTENT_MESSAGE);
+        //final QuizRecyclerViewClass quizRecyclerViewClass = QuizRecyclerViewClass.getModule(moduleName);
+        System.out.println(moduleName + " From get intent QuizScreen!");
 
         //Return the list of questions by module/category
         AppDatabase db = AppDatabase.getDatabase(QuizScreen.this);
         GetQuestionsByCategoryAsyncTask getQuestionsByCategoryAsyncTask = new GetQuestionsByCategoryAsyncTask();
         getQuestionsByCategoryAsyncTask.setDatabase(db);
         getQuestionsByCategoryAsyncTask.setQuiz(QuizScreen.this);
-        getQuestionsByCategoryAsyncTask.execute(category);
+       // getQuestionsByCategoryAsyncTask.execute(moduleName);
 
 
         //Confirm button onClickListener
