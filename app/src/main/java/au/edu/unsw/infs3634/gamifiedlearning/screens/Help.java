@@ -12,6 +12,7 @@ import android.view.MenuItem;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -21,15 +22,18 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class Help extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private MapView mMapView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.mapView);
-        mapFragment.getMapAsync(this);
+        //map view - find the relevant id in the xml file
+        mMapView = findViewById(R.id.mapView);
+        //set an instance of the callback on the MapView object
+        mMapView.onCreate(savedInstanceState);
+        //register the callback on the mapview for the object to be triggered when the mapview is ready to use
+        mMapView.getMapAsync(this);
 
         //Initialise and assign bottom navigation bar
         BottomNavigationView bottomNaviView = findViewById(R.id.bottom_navibar);
@@ -55,20 +59,45 @@ public class Help extends FragmentActivity implements OnMapReadyCallback {
             }
         });
     }
-
+    //In order to apply Mapview, the below activity lifecycle methods to the corresponding methods
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mMapView.onResume();
+    }
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
         LatLng UNSWHealthCentre = new LatLng(-33.917055, 151.231717);
         mMap.addMarker(new MarkerOptions().position(UNSWHealthCentre).title("UNSW Health Centre"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(UNSWHealthCentre));
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.getUiSettings().setZoomGesturesEnabled(true);
         mMap.getUiSettings().setCompassEnabled(true);
         mMap.getUiSettings().setMapToolbarEnabled(true);
-        mMap.getUiSettings().setMyLocationButtonEnabled(true);
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(UNSWHealthCentre,20));
+    }
+    @Override
+    protected void onPause() {
+        mMapView.onPause();
+        super.onPause();
+    }
 
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(17));
+    @Override
+    protected void onDestroy() {
+        mMapView.onDestroy();
+        super.onDestroy();
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mMapView.onLowMemory();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mMapView.onSaveInstanceState(outState);
     }
 }
