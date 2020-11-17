@@ -6,6 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".screens.Nature">
 
+
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/wave_header"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_pause"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp"
+        app:mwhColorAlpha="0.45"
+        app:mwhStartColor="@color/colorlightgreen"
+        app:mwhCloseColor="@color/colorAccent" />
+
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/wave_footer"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:scaleY="-1"
+        app:mwhColorAlpha="0.45"
+        app:mwhStartColor="@color/colorAccent"
+        app:mwhCloseColor="@color/colorlightgreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
     <Button
         android:id="@+id/btn_play"
         android:layout_width="70dp"
@@ -15,23 +39,21 @@
         android:background="@drawable/play"
         app:layout_constraintEnd_toStartOf="@+id/btn_pause"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_pause"
-        android:onClick="play"/>
+        app:layout_constraintTop_toTopOf="@+id/btn_pause" />
 
     <Button
         android:id="@+id/btn_pause"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginRight="42dp"
         android:background="@drawable/pause"
+
+        android:foregroundGravity="center"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_stop"
         app:layout_constraintStart_toEndOf="@+id/btn_play"
         app:layout_constraintTop_toTopOf="parent"
-        android:onClick="pause"/>
+        app:layout_constraintVertical_bias="0.645" />
 
     <Button
         android:id="@+id/btn_stop"
@@ -44,4 +66,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_pause"
         app:layout_constraintTop_toTopOf="@+id/btn_pause" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Close your eyes \n Listen to the nature sounds"
+        android:textColor="#B09E99"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_pause"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wave_header" />
 </androidx.constraintlayout.widget.ConstraintLayout>

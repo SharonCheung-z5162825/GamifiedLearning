@@ -2,12 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="au.edu.unsw.infs3634.gamifiedlearning">
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_S ETTINGS" />
+
+
 
     <application
         android:allowBackup="true"
@@ -25,7 +29,7 @@
         <activity android:name=".screens.Exercise" />
         <activity android:name=".screens.LearnScreen" />
         <activity android:name=".screens.QuizScreen" />
-        <activity android:name=".screens.HomeScreen">
+        <activity android:name=".screens.LandingScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,9 +40,10 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
+        <activity android:name=".screens.ModuleScreen" />
+        <activity android:name=".screens.QuizScreenAndDatabase" />
         <activity android:name=".screens.RegisterScreen" />
-        <activity android:name=".screens.LandingScreen" />
+        <activity android:name=".screens.HomeScreen" />
         <activity android:name=".screens.LoginScreen" />
         <activity android:name=".screens.Nature" />
         <activity android:name=".screens.Meditation" />
