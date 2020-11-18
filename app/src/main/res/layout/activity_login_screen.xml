@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4C4B4B"
-    android:backgroundTint="#40000000"
+    android:backgroundTint="#F4A57B"
     android:backgroundTintMode="src_over"
     android:scaleType="centerCrop"
     tools:context=".screens.LoginScreen">

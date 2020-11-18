@@ -6,9 +6,41 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:orientation="vertical"
-    android:weightSum="5"
+    android:weightSum="3"
     tools:context=".screens.Meditation">
 
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/wave_header"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_pause"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp"
+        app:mwhColorAlpha="0.45"
+        app:mwhStartColor="@color/colorlightgreen"
+        app:mwhCloseColor="@color/colorAccent" />
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="50dp"
+        android:orientation="vertical">
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+        android:textStyle="bold|italic"
+        android:textColor="#685550"
+        android:textSize="20sp"
+        android:text="Select one guided meditation provided by Great Meditation Youtube Channel.">
+    </TextView>
     <androidx.cardview.widget.CardView
         android:id="@+id/card_youtube1"
         android:layout_width="match_parent"
@@ -16,7 +48,7 @@
         android:layout_marginRight="30dp"
         app:cardCornerRadius="8dp"
         android:layout_marginLeft="30dp"
-        android:layout_height="173dp">
+        android:layout_height="150dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,26 +62,28 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp">
+
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="202dp"
+                    android:layout_height="110dp"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="10dp"
                         android:text="Gratitude Meditiation"
-                        android:textSize="23dp"
                         android:textColor="#685550"
-                        android:textStyle="bold"
-                        android:paddingTop="30dp"
-                        android:paddingBottom="20dp"/>
+                        android:textSize="21dp"
+                        android:textStyle="bold" />
 
                     <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Practice gratitudeon a regular basis \n experience more positive emotions"
-                    android:textSize="14dp"
-                    android:textColor="#685550"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Practice gratitudeon a regular basis experience more positive emotions."
+                        android:textColor="#685550"
+                        android:textSize="15dp" />
 
                 </LinearLayout>
 
@@ -59,12 +93,12 @@
 
                     <Button
                         android:id="@+id/btn_youtube"
-                        android:layout_width="67dp"
-                        android:layout_height="71dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginRight="0dp"
-                        android:layout_marginBottom="13dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp"
                         android:background="@drawable/youtube_" />
                 </RelativeLayout>
             </LinearLayout>
@@ -79,7 +113,7 @@
         android:layout_marginRight="30dp"
         app:cardCornerRadius="8dp"
         android:layout_marginLeft="30dp"
-        android:layout_height="173dp">
+        android:layout_height="150dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -93,26 +127,28 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp">
+
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="202dp"
+                    android:layout_height="110dp"
                     android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Productive Meditiation"
-                        android:textSize="23dp"
-                        android:textColor="#685550"
-                        android:textStyle="bold"
-                        android:paddingTop="30dp"
-                        android:paddingBottom="20dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Start the morning productively \n experience more positive emotions"
-                        android:textSize="14dp"
-                        android:textColor="#685550"/>
+                        android:paddingTop="15dp"
+                        android:paddingBottom="10dp"
+                        android:text="Positive Meditiation"
+                        android:textColor="#685550"
+                        android:textSize="21dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Start your day productively with a positive mindset that will guarantee successs!"
+                        android:textColor="#685550"
+                        android:textSize="15dp" />
 
                 </LinearLayout>
 
@@ -122,12 +158,12 @@
 
                     <Button
                         android:id="@+id/btn_youtube2"
-                        android:layout_width="67dp"
-                        android:layout_height="71dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginRight="0dp"
-                        android:layout_marginBottom="13dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp"
                         android:background="@drawable/youtube_" />
                 </RelativeLayout>
             </LinearLayout>
@@ -142,7 +178,7 @@
         android:layout_marginRight="30dp"
         app:cardCornerRadius="8dp"
         android:layout_marginLeft="30dp"
-        android:layout_height="173dp">
+        android:layout_height="150dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -156,26 +192,28 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp">
+
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="202dp"
+                    android:layout_height="110dp"
                     android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Refreshing Meditiation"
-                        android:textSize="23dp"
-                        android:textColor="#685550"
-                        android:textStyle="bold"
-                        android:paddingTop="30dp"
-                        android:paddingBottom="20dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Relax and refresh your mind \n experience more positive emotions"
-                        android:textSize="14dp"
-                        android:textColor="#685550"/>
+                        android:paddingTop="15dp"
+                        android:paddingBottom="10dp"
+                        android:text="Refresh Meditiation"
+                        android:textColor="#685550"
+                        android:textSize="21dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Finished work feeling exhausted? This meditation will help refresh your mind!"
+                        android:textColor="#685550"
+                        android:textSize="15dp" />
 
                 </LinearLayout>
 
@@ -185,17 +223,18 @@
 
                     <Button
                         android:id="@+id/btn_youtube3"
-                        android:layout_width="67dp"
-                        android:layout_height="71dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginRight="0dp"
-                        android:layout_marginBottom="13dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp"
                         android:background="@drawable/youtube_" />
                 </RelativeLayout>
             </LinearLayout>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
+</LinearLayout>
+    </ScrollView>
   </LinearLayout>
