@@ -40,7 +40,8 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-        <activity android:name=".screens.ModuleScreen" />
+        <activity android:name=".screens.ModuleScreen"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
         <activity android:name=".screens.QuizScreenAndDatabase" />
         <activity android:name=".screens.RegisterScreen" />
         <activity android:name=".screens.HomeScreen" />

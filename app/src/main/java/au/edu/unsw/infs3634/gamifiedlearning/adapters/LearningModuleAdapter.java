@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -78,6 +79,9 @@ public class LearningModuleAdapter extends RecyclerView.Adapter<LearningModuleAd
         holder.name.setText(modulePresent.getModule());
         holder.question.setText("10 Questions");
         holder.itemView.setTag(modulePresent.getModuleCode() + " " + modulePresent.getModule());
+        //use getter to retrieve image resource from arrayList
+        int image_id = modulePresent.getImage();
+        holder.moduleImage.setImageResource(image_id);
 
     }
 
@@ -88,7 +92,7 @@ public class LearningModuleAdapter extends RecyclerView.Adapter<LearningModuleAd
 
     public class LearningModuleViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView name, question;
-        //public ImageView moduleImage;
+        public ImageView moduleImage;
         private Listener listener;
 
         public LearningModuleViewHolder(@NonNull View itemView, Listener listener) {
@@ -97,6 +101,7 @@ public class LearningModuleAdapter extends RecyclerView.Adapter<LearningModuleAd
             itemView.setOnClickListener(this);
             name = itemView.findViewById(R.id.tvModuleName);
             question = itemView.findViewById(R.id.tvModuleQuestions);
+            moduleImage = itemView.findViewById(R.id.ivList);
         }
 
         @Override

@@ -4,25 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FEF1EB"
     tools:context=".screens.QuizScreenAndDatabase">
 
     <TextView
         android:id="@+id/tvModuleSelected"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recyclerview containing our 5 Modules to chose from"
+        android:text="Text"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvQuizName"
+        app:layout_constraintVertical_bias="0.088" />
 
     <Button
         android:id="@+id/btnStartQuiz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="113dp"
+        android:layout_height="48dp"
         android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
         android:text="Start Quiz"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="@+id/tvModuleSelected"
         app:layout_constraintStart_toStartOf="@+id/tvModuleSelected"
         app:layout_constraintTop_toBottomOf="@+id/tvModuleSelected" />
+
+    <TextView
+        android:id="@+id/tvQuizName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:text="Zen Quiz"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

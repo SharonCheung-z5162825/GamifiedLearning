@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FEF1EB"
     tools:context=".screens.QuizScreen">
 
 
@@ -44,30 +45,30 @@
 
         <RadioButton
             android:id="@+id/rBQuizOption1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/greyquizoption"
+            android:background="@drawable/whitequizbutton1"
             android:text="@string/quiz_mc_options" />
 
         <RadioButton
             android:id="@+id/rBQuizOption2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/greyquizoption"
+            android:background="@drawable/whitequizbutton1"
             android:text="@string/quiz_mc_options" />
 
         <RadioButton
             android:id="@+id/rBQuizOption3"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/greyquizoption"
+            android:background="@drawable/whitequizbutton1"
             android:text="@string/quiz_mc_options" />
 
         <RadioButton
             android:id="@+id/rBQuizOption4"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/greyquizoption"
+            android:background="@drawable/whitequizbutton1"
             android:text="@string/quiz_mc_options" />
     </RadioGroup>
 
@@ -84,10 +85,12 @@
 
     <Button
         android:id="@+id/btnQuizConfirm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="46dp"
         android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
         android:text="Next Question"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="@+id/RgQuizRadioQuestionRadioGroup"
         app:layout_constraintStart_toStartOf="@+id/RgQuizRadioQuestionRadioGroup"
         app:layout_constraintTop_toBottomOf="@+id/RgQuizRadioQuestionRadioGroup" />

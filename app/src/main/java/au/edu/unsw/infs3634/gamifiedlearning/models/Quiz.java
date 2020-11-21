@@ -7,6 +7,8 @@ import androidx.room.PrimaryKey;
 
 import java.util.ArrayList;
 
+import au.edu.unsw.infs3634.gamifiedlearning.R;
+
 @Entity
 public class Quiz {
 
@@ -81,9 +83,10 @@ public class Quiz {
 
     //Constructor
     @Ignore
-    public Quiz(String moduleCode, String module){
+    public Quiz(String moduleCode, String module, int image){
         this.moduleCode = moduleCode;
         this.module = module;
+        this.image = image;
 
     }
     //Variables
@@ -91,6 +94,8 @@ public class Quiz {
     private String moduleCode;
     @Ignore
     private String module;
+    @Ignore
+    private int image;
 
 
     //Getters
@@ -102,6 +107,8 @@ public class Quiz {
     public String getModule(){
         return module;
     }
+    @Ignore
+    public int getImage(){return image;}
 
     //Setters
     @Ignore
@@ -112,16 +119,20 @@ public class Quiz {
     public void setModule(String module){
         this.module = module;
     }
+    @Ignore
+    public  void setImage(int image){
+        this.image = image;
+    }
 
     //ArrayList containing modules and their data
     @Ignore
     public static ArrayList<Quiz> getModules(){
         ArrayList<Quiz> module = new ArrayList<>();
-        module.add(new Quiz("1","Depression"));
-        module.add(new Quiz("2","Anxiety"));
-        module.add(new Quiz("3","Addiction"));
-        module.add(new Quiz("4","Eating Disorder"));
-        module.add(new Quiz("5","Sleep Issues"));
+        module.add(new Quiz("1","Depression", R.drawable.depression));
+        module.add(new Quiz("2","Anxiety", R.drawable.anxiety));
+        module.add(new Quiz("3","Addiction", R.drawable.addiction));
+        module.add(new Quiz("4","Eating Disorder", R.drawable.eating_disorder));
+        module.add(new Quiz("5","Sleep Issues", R.drawable.sleep_issues));
         return module;
     }
     //Getter to return a module
