@@ -11,7 +11,6 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface APIInterface {
-
-    @GET("/module/{moduleTitle}")
+    @GET("/module/search/title/{moduleTitle}")
     Call<Module> getModule(@Path(value = "moduleTitle", encoded = true) String moduleTitle);
 }

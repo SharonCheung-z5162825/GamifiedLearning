@@ -208,7 +208,7 @@
                     android:layout_width="130dp"
                     android:layout_height="160dp"
                     android:layout_margin="10dp"
-                    android:id="@+id/card_exercise"
+                    android:id="@+id/card_notes"
                     android:clickable="true"
                     android:foreground="?android:attr/selectableItemBackground">
 
@@ -229,7 +229,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:text="Exercise"
+                            android:text="Notes"
                             android:textStyle="bold" />
 
                         <View
@@ -243,7 +243,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:padding="5dp"
-                            android:text="Stay active \n get moving!"
+                            android:text="Express your ideas"
                             android:textColor="@android:color/darker_gray" />
 
                     </LinearLayout>

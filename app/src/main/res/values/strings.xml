@@ -9,5 +9,11 @@
     <string name="quiz_mc_questions">"Actual questions\n Actual question"</string>
     <string name="quiz_mc_options">Option abcd</string>
 
-
+    <string-array name="moduleTitles">
+        <item>Depression</item>
+        <item>Anxiety</item>
+        <item>Addiction</item>
+        <item>Eating Disorder</item>
+        <item>Sleep Issues</item>
+    </string-array>
 </resources>
