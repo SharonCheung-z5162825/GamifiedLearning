@@ -18,7 +18,7 @@ public class HomeScreen extends AppCompatActivity {
     private CardView card_learn;
     private CardView card_quiz;
     private CardView card_meditation;
-    private CardView card_exercise;
+    private CardView card_notes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,9 +49,9 @@ public class HomeScreen extends AppCompatActivity {
                 startActivity(new Intent(HomeScreen.this, Meditation.class));
             }
         });
-        //set on-click listener on cardview exercise
-        card_exercise = findViewById(R.id.card_notes);
-        card_exercise.setOnClickListener(new View.OnClickListener() {
+        //set on-click listener on cardview notes
+        card_notes = findViewById(R.id.card_notes);
+        card_notes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeScreen.this, NotesScreen.class).setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));

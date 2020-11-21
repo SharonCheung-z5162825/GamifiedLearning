@@ -92,7 +92,6 @@
                     android:layout_height="match_parent">
 
                     <Button
-                        android:id="@+id/btn_youtube"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -157,7 +156,6 @@
                     android:layout_height="match_parent">
 
                     <Button
-                        android:id="@+id/btn_youtube2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -222,7 +220,6 @@
                     android:layout_height="match_parent">
 
                     <Button
-                        android:id="@+id/btn_youtube3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
