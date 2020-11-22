@@ -45,17 +45,19 @@ public class LoginScreen extends AppCompatActivity {
             public void onClick(View view) {
                 LoginUserTask loginTask = new LoginUserTask();
                 loginTask.setDatabase(getDatabase(getApplicationContext()));
+                boolean result = false;
                 try {
-                    boolean result = loginTask.execute(mUserName.getText().toString(), mPassword.getText().toString()).get();
-                    if(result) {
-                        Toast.makeText(getApplicationContext(),"Welcome " + mUserName.getText().toString() + "!",Toast.LENGTH_SHORT);
-                        homeScreenLaunch();
-                    } else {
-                        Toast.makeText(getApplicationContext(),"Incorrect username/password!",Toast.LENGTH_SHORT);
-                    }
+                    result = loginTask.execute(mUserName.getText().toString(), mPassword.getText().toString()).get();
                 } catch(Exception e) {
-                    System.out.println("Login screen toast msg failed");
+                    //System.out.println("Login screen toast msg failed");
                     Log.d(TAG, e.toString());
+                }
+
+                if(result) {
+                    Toast.makeText(getApplicationContext() ,"Welcome " + mUserName.getText() + "!",Toast.LENGTH_SHORT).show();
+                    homeScreenLaunch();
+                } else {
+                    Toast.makeText(getApplicationContext() ,"Incorrect username/password!",Toast.LENGTH_SHORT).show();
                 }
             }
         });

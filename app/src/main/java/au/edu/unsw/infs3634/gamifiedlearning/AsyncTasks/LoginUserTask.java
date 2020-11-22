@@ -32,12 +32,9 @@ public class LoginUserTask extends AsyncTask<String, Boolean, Boolean> {
 
                     return true;
                 }
-
             }catch(Exception e) {
                 System.out.println("Login failed");
-
             }
-
         }
         return false;
     }
