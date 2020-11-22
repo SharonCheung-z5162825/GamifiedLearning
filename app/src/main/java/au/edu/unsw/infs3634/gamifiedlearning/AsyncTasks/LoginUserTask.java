@@ -22,14 +22,22 @@ public class LoginUserTask extends AsyncTask<String, Boolean, Boolean> {
 
             User currentUser = mDb.userDao().findByUsername(userCredentials[0]);
 
-            if(currentUser.getPassword().equals(userCredentials[1])) {
-                currentUser.setLoggedIn(true);
-                mDb.userDao().insertUser(currentUser);
+            try{
+                if(currentUser.getPassword().equals(userCredentials[1])) {
+                    currentUser.setLoggedIn(true);
+                    mDb.userDao().insertUser(currentUser);
 
-                Log.d(TAG, "Successfully logged in User - " + currentUser.getUsername());
+                    Log.d(TAG, "Successfully logged in User - " + currentUser.getUsername());
+                    System.out.println("Login success");
 
-                return true;
+                    return true;
+                }
+
+            }catch(Exception e) {
+                System.out.println("Login failed");
+
             }
+
         }
         return false;
     }

@@ -54,6 +54,7 @@ public class LoginScreen extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Incorrect username/password!",Toast.LENGTH_SHORT);
                     }
                 } catch(Exception e) {
+                    System.out.println("Login screen toast msg failed");
                     Log.d(TAG, e.toString());
                 }
             }
