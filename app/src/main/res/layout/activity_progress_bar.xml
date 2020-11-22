@@ -4,25 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".screens.ProgressBar">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PROGRESS BAR"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navibar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:background="#FFFFFF"
         app:itemIconSize="30dp"
         app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/navigation_menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <ImageView
+        android:id="@+id/iv_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="311dp"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/navigation_menu">
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        android:layout_marginBottom="179dp"
+        app:srcCompat="@drawable/progressbar" />
 </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
